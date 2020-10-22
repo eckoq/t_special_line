@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+  <title>FCED</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap-table.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-style.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+    
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+    
+          <!-- Header -->
+          <header id="header">
+            <div class="logo">
+              <a href="index.html">FCED</a>
+            </div>
+          </header>
+          
+          <h4 id="static_ip">Q: 专线节点公网？ </br> </h4>
+          <div class="table-added">
+           要求专线节点线路拨号后地址为公网IP或者线路为静态公网IP<br>
+          </div>
+          <hr>
+
+          <h4>Q: 专线磁盘要求？ </br> </h4>
+          <div class="table-added">
+           磁盘最低要求1Gbps上行对应1.5T存储和600IOPS<br>
+          </div>
+          <hr>
+
+          <h4 id="op_tlinux">Q: tlinux操作系统？ </br> </h4>
+          <div class="table-added">
+          专线节点要求装tlinux2.2版本系统和提供root权限，平台操作系统镜像下载地址
+          </div>
+          <hr>
+
+          <h4 id="disk_iops">Q: 磁盘IOPS？ </br> </h4>
+          <div class="table-added">
+              IOPS为磁盘每秒读写次数<br>
+              测试方法(fio): <br>
+              1) dd if=/dev/zero of=test.test bs=1G count=100<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非裸盘、256KB、8:2混合读写，每块盘一个线程，多盘并行测试io性能 <br>
+              2) fio -filename=test.test -direct=0 -iodepth 1 -thread -rw=randrw -rwmixread=80 -ioengine=psync -bs=256k -size=100G -numjobs=1 -runtime=180 -group_reporting -name=randrw_80read_256k
+          </div>
+          <hr>
+
+        </div>
+      </div>
+    
+      <!-- Sidebar -->
+      <div id="sidebar">
+    
+        <div class="inner">
+          <section id="search" class="alt">
+            <span>专线接入标准</span>
+          </section>
+    
+          <!-- Menu -->
+          <nav id="menu">
+            <ul>
+              <li><a href="index.html">硬件要求</a></li>
+              <li><a href="">质量标准</a></li>
+              <li><a href="question.html">问题Q&A</a></li>
+            </ul>
+          </nav>
+    
+          <!-- Featured Posts -->
+          <div class="featured-posts">
+            <div class="heading">
+              <h2></h2>
+            </div>
+            <div class="owl-carousel owl-theme">
+              <a href="#">
+                <div class="featured-item">
+                  <img src="assets/images/featured_post_01.jpg" alt="featured one">
+                  <p></p>
+                </div>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">© Copyright (c) 2019 Fced, Inc. All Rights Reserved.
+              <a rel="nofollow" href="http://www.beian.miit.gov.cn/" </a>粤ICP备20006835号</p>
+          </footer>
+    
+        </div>
+      </div>
+    
+    </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/transition.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+
+</body>
+
+</html>
