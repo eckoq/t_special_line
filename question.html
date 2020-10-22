@@ -46,7 +46,7 @@
 
           <h4>Q: 专线磁盘要求？ </br> </h4>
           <div class="table-added">
-           磁盘最低要求1Gbps上行对应1.5T存储和600IOPS<br>
+           硬盘最低要求1Gbps上行对应1.5T存储和600IOPS<br>
           </div>
           <hr>
 
@@ -56,10 +56,10 @@
           </div>
           <hr>
 
-          <h4 id="disk_iops">Q: 磁盘IOPS？ </br> </h4>
+          <h4 id="disk_iops">Q: 硬盘IOPS？ </br> </h4>
           <div class="table-added">
-              IOPS为磁盘每秒读写次数<br>
-              测试方法(fio): <br>
+              IOPS为硬盘每秒读写次数；要求单盘256KB随机读写(读写比例8:2)每秒次数不低于600<br>
+              推荐测试方法(fio): <br>
               1) dd if=/dev/zero of=test.test bs=1G count=100<br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非裸盘、256KB、8:2混合读写，每块盘一个线程，多盘并行测试io性能 <br>
               2) fio -filename=test.test -direct=0 -iodepth 1 -thread -rw=randrw -rwmixread=80 -ioengine=psync -bs=256k -size=100G -numjobs=1 -runtime=180 -group_reporting -name=randrw_80read_256k
@@ -81,7 +81,9 @@
           <nav id="menu">
             <ul>
               <li><a href="index.html">硬件要求</a></li>
+              <!--
               <li><a href="">质量标准</a></li>
+              -->
               <li><a href="question.html">问题Q&A</a></li>
             </ul>
           </nav>
